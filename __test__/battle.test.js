@@ -80,4 +80,14 @@ describe ('Battle', () => {
     expect(attack).toBeGreaterThanOrEqual(24);
     expect(attack).toBeLessThan(44);
   })
+  test('Should subtract the character attack from NPC defense', () => {
+    const newEncounter = new Battle;
+    const info = new Character("wizard", "stick"); 
+    const charAtt = info.attack
+    const wepAtt = info.weaponAttack
+    const total = charAtt + wepAtt
+    let roll = newEncounter.attack();
+    let attack = total + roll
+    const NPC = new NonPlayerCharacter("warrior", "stick"); 
+    let defense = NPC.defense
 })
