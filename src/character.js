@@ -1,32 +1,38 @@
-export function Character(type, weapon, shield) {
+export class Character{
+constructor (type, weapon) {
 this.weapon = weapon;
-this.shield = shield;
 this.type = type;
 this.getDefense();
 this.getAttack();
+this.addWeapon();
   }
   
   
-  // Character.prototype.addWeapon = function(weapon) {
-  //   this.attack.push(weapon);
-  // }
-//   Character.prototype.addShield = function(shield) {
-//     this.shield.push(shield);
+addWeapon() {
+    this.weaponAttack = 0;
+      if (this.weapon === "stick") {
+        return this.weaponAttack = 5 ;
+      } else if (this.weapon === "sword") {
+        this.weaponAttack = 10;
+      } else { 
+      this.weaponAttack = 15;
+      }
+    }
 
-   Character.prototype.getDefense = function() {
+  getDefense() {
       this.defense = 0;
 
       if (this.type === "wizard") {
-         return this.defense = 5 ;
+        return this.defense = 50 ;
       } else if (this.type === "warrior") {
-        this.defense = 10;
+        this.defense = 100;
       } else { 
-      this.defense= 15;
+      this.defense= 150;
       }
-//  this.defense += this.shield;
+
       }
-     Character.prototype.getAttack = function() {
-       this.attack = 0;
+  getAttack() {
+      this.attack = 0;
     
         if (this.type === "wizard") {
           this.attack = 15 ;
@@ -35,6 +41,13 @@ this.getAttack();
         } else { 
         this.attack = 5;
         }
-//     this.attack += this.weapon;
-//   };
-};
+  }
+}
+export class NonPlayerCharacter{
+  constructor (type, weapon) {
+  this.weapon = weapon;
+  this.type = type;
+  this.attack = 23;
+  this.defense = 50;
+  }
+}

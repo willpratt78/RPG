@@ -1,5 +1,7 @@
 import { Character } from "../src/character";
 import { Battle } from "../src/battle";
+import { NonPlayerCharacter } from "../src/character.js";
+
 
 describe ('Battle', () => {
 
@@ -68,5 +70,14 @@ describe ('Battle', () => {
     let attack = total + roll 
     expect(attack).toBeGreaterThanOrEqual(11);
     expect(attack).toBeLessThan(31);   
+  })
+  test('Should return a d20 roll plus NonPlayerCharacter attack', () => {
+    const newEncounter = new Battle;
+    const info = new NonPlayerCharacter("warrior", "stick"); 
+    const total = info.attack
+    let roll = newEncounter.attack();
+    let attack = total + roll
+    expect(attack).toBeGreaterThanOrEqual(24);
+    expect(attack).toBeLessThan(44);
   })
 })
