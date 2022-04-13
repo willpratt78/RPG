@@ -3,7 +3,7 @@ this.weapon = weapon;
 this.shield = shield;
 this.type = type;
 this.getDefense();
-// this.getAttack();
+this.getAttack();
   }
   
   
@@ -25,16 +25,16 @@ this.getDefense();
       }
 //  this.defense += this.shield;
       }
-//      Character.prototype.getAttack = function() {
-//        this.attack = 0;
+     Character.prototype.getAttack = function() {
+       this.attack = 0;
     
-//         if (this.type === "wizard") {
-//           this.attack = 15 ;
-//         } else if (this.type === "warrior") {
-//           this.attack = 10;
-//         } else { 
-//         this.attack = 5;
-//         }
+        if (this.type === "wizard") {
+          this.attack = 15 ;
+        } else if (this.type === "warrior") {
+          this.attack = 10;
+        } else { 
+        this.attack = 5;
+        }
 //     this.attack += this.weapon;
 //   };
-// };
+};
