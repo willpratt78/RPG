@@ -12,6 +12,11 @@ describe ('Character', () => {
     info.getDefense();
     expect(info.defense).toEqual(5);
   });
+test('should return the defense of the character', () => {
+  const info = new Character("warrior"); 
+  info.getDefense();
+  expect(info.defense).toEqual(10);
+  });
 });
 
 // Describe ('Constructor name', () => {

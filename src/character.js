@@ -23,7 +23,7 @@ this.getDefense();
       } else { 
       this.defense= 15;
       }
- this.defense += this.shield;
+//  this.defense += this.shield;
       }
 //      Character.prototype.getAttack = function() {
 //        this.attack = 0;
