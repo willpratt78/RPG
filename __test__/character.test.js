@@ -17,6 +17,12 @@ test('should return the defense of the character', () => {
   info.getDefense();
   expect(info.defense).toEqual(10);
   });
+  test('should return the defense of the character', () => {
+    const info = new Character("rogue"); 
+    info.getDefense();
+    expect(info.defense).toEqual(15);
+    });
+
 });
 
 // Describe ('Constructor name', () => {
