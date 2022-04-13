@@ -2,7 +2,7 @@ export function Character(type, weapon, shield) {
 this.weapon = weapon;
 this.shield = shield;
 this.type = type;
-// this.getDefense();
+this.getDefense();
 // this.getAttack();
   }
   
@@ -17,14 +17,14 @@ this.type = type;
       this.defense = 0;
 
       if (this.type === "wizard") {
-        this.defense = 5 ;
+         return this.defense = 5 ;
       } else if (this.type === "warrior") {
         this.defense = 10;
       } else { 
       this.defense= 15;
       }
  this.defense += this.shield;
-}
+      }
 //      Character.prototype.getAttack = function() {
 //        this.attack = 0;
     

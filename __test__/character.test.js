@@ -4,18 +4,15 @@ describe ('Character', () => {
 
   test('should return Character object', () => {
     const info = new Character("wizard"); 
-    console.log(info);
     expect(info.type).toEqual("wizard");
-  })
-})
+  });
 
-
-
-  // test('should be defined by selected class', () => {
-  //   const characterName = new Character(); 
-  //   const wizard = "Jeff"
-  //   characterName.push(wizard)
-  // })
+  test('should return the defense of the character', () => {
+    const info = new Character("wizard"); 
+    info.getDefense();
+    expect(info.defense).toEqual(5);
+  });
+});
 
 // Describe ('Constructor name', () => {
 
