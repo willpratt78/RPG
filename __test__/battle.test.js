@@ -89,5 +89,20 @@ describe ('Battle', () => {
     let roll = newEncounter.attack();
     let attack = total + roll
     const NPC = new NonPlayerCharacter("warrior", "stick"); 
-    let defense = NPC.defense
-})
+    let remainingDef = NPC.defense-attack
+    NPC.defense = remainingDef
+    expect(remainingDef).toBeLessThan(50)
+  })
+  test('Should subtract the character attack from PC defense', () => {
+    const newEncounter = new Battle;
+    const info = new Character("wizard", "stick"); 
+    const NPC = new NonPlayerCharacter("warrior", "stick"); 
+    let roll = newEncounter.attack();
+    let attack = NPC.attack + roll
+    let remainingDef = info.defense-attack
+    info.defense = remainingDef
+    console.log(attack)
+    console.log(info.defense)
+    expect(remainingDef).toBeLessThan(50)
+  })
+});

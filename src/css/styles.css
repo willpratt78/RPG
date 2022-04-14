@@ -1,0 +1,11 @@
+body {  
+  margin-top: 5%;
+  margin-bottom: 15%;
+  text-align: center;
+  background-image: url("https://cdn.weasyl.com/~persegan/submissions/1605649/a224d62ba32ed6a256c3bdfaf0a370f2cd8ca040d804720d597b8a6010218a49/persegan-pixel-art-city-background.jpg");
+  background-color: #3d1010; 
+  height: 900px; 
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover;
+}

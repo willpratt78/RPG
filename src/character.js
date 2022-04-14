@@ -6,8 +6,7 @@ this.getDefense();
 this.getAttack();
 this.addWeapon();
   }
-  
-  
+
 addWeapon() {
     this.weaponAttack = 0;
       if (this.weapon === "stick") {
@@ -21,7 +20,6 @@ addWeapon() {
 
   getDefense() {
       this.defense = 0;
-
       if (this.type === "wizard") {
         return this.defense = 50 ;
       } else if (this.type === "warrior") {
@@ -29,11 +27,10 @@ addWeapon() {
       } else { 
       this.defense= 150;
       }
-
       }
+
   getAttack() {
       this.attack = 0;
-    
         if (this.type === "wizard") {
           this.attack = 15 ;
         } else if (this.type === "warrior") {
@@ -43,6 +40,7 @@ addWeapon() {
         }
   }
 }
+
 export class NonPlayerCharacter{
   constructor (type, weapon) {
   this.weapon = weapon;
