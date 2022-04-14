@@ -93,7 +93,7 @@ describe ('Battle', () => {
     NPC.defense = remainingDef
     expect(remainingDef).toBeLessThan(50)
   })
-  test('Should subtract the character attack from PC defense', () => {
+  test('Should subtract the NPC attack from PC defense', () => {
     const newEncounter = new Battle;
     const info = new Character("wizard", "stick"); 
     const NPC = new NonPlayerCharacter("warrior", "stick"); 
@@ -101,8 +101,52 @@ describe ('Battle', () => {
     let attack = NPC.attack + roll
     let remainingDef = info.defense-attack
     info.defense = remainingDef
-    console.log(attack)
-    console.log(info.defense)
     expect(remainingDef).toBeLessThan(50)
   })
+   test('Should subtract the character attack from NPC defense', () => {
+    const newEncounter = new Battle;
+    const info = new Character("warrior", "stick"); 
+    const charAtt = info.attack
+    const wepAtt = info.weaponAttack
+    const total = charAtt + wepAtt
+    let roll = newEncounter.attack();
+    let attack = total + roll
+    const NPC = new NonPlayerCharacter("warrior", "stick"); 
+    let remainingDef = NPC.defense-attack
+    NPC.defense = remainingDef
+    expect(remainingDef).toBeLessThan(50)
+  })
+  test('Should subtract the NPC attack from PC defense', () => {
+    const newEncounter = new Battle;
+    const info = new Character("warrior", "stick"); 
+    const NPC = new NonPlayerCharacter("warrior", "stick"); 
+    let roll = newEncounter.attack();
+    let attack = NPC.attack + roll
+    let remainingDef = info.defense-attack
+    info.defense = remainingDef
+    expect(remainingDef).toBeLessThan(100)
+  })
+  test('Should subtract the character attack from NPC defense', () => {
+    const newEncounter = new Battle;
+    const info = new Character("rogue", "stick"); 
+    const charAtt = info.attack
+    const wepAtt = info.weaponAttack
+    const total = charAtt + wepAtt
+    let roll = newEncounter.attack();
+    let attack = total + roll
+    const NPC = new NonPlayerCharacter("warrior", "stick"); 
+    let remainingDef = NPC.defense-attack
+    NPC.defense = remainingDef
+    expect(remainingDef).toBeLessThan(50)
+  })
+  test('Should subtract the NPC attack from PC defense', () => {
+    const newEncounter = new Battle;
+    const info = new Character("rogue", "stick"); 
+    const NPC = new NonPlayerCharacter("warrior", "stick"); 
+    let roll = newEncounter.attack();
+    let attack = NPC.attack + roll
+    let remainingDef = info.defense-attack
+    info.defense = remainingDef
+    expect(remainingDef).toBeLessThan(150)
+  }) 
 });
